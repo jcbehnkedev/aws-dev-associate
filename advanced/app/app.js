@@ -31,12 +31,16 @@ var data = {
       )
     }
   }
+
+  const url_base = "";
+  const url_path = "/submit";
+  
   var App = {
     submit: function(){
       m.request({
           method: "PUT",
-          url: "<API-ENDPOINT>",
-          params: {selected: data.selected},
+          url: "/submit",
+          body: {selected: data.selected},
       })
       .then(function(data) {
         console.log('data',data)
