@@ -28,7 +28,24 @@ createdb study-sync -h localhost -U postgres
 ### Connect to Postgres Client
 
 ```sh
-psql -U posgres -h 0.0.0.0
-psql postgres:password@0.0.0.0:5432
+psql postgresql://postgres:password@localhost:5432/study-sync
 ```
 
+## Create a postgres table
+
+## Create Schema
+
+psql study-sync < sql/schema.sql -h localhost -U postgres
+
+## Import Data
+
+psql study-sync < sql/seed.sql -h localhost -U postgres
+
+## Verify Data
+
+sh```
+psql postgresql://postgres:password@localhost:5432/study-sync
+
+```sql
+SELECT * FROM questions;
+```

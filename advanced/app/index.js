@@ -6,7 +6,7 @@ const pg = require('pg');
 
 const { Client } = pg
 const client = new Client()
-await client.connect()
+//await client.connect()
 
 app.use(express.json());
 
